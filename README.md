@@ -60,3 +60,18 @@ All scans were performed on my own authorized lab machine for educational purpos
 - AGGRESIVE 2.PNG
 - AGGRESIVE 3.PNG
 - AGGRESIVE 4.PNG
+
+  
+Project Screenshots
+
+1. Host Discovery Scan
+
+2. Port Scanning
+
+3. Service Version Detection
+
+4. OS Detection
+
+5. Vulnerability Scan
+
+6. Aggressive Scan
