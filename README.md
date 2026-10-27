@@ -36,7 +36,7 @@ Command:
 
 `ip addr`
 
-![Lab Setup Connection](host%20discovery%20conn.PNG)
+![Lab Setup Connection](meta%20ip.PNG)
 
 # 5. Host Discovery Scan
 
