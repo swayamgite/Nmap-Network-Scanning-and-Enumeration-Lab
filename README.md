@@ -44,3 +44,19 @@ This project provided practical experience with Nmap scanning techniques and bas
 
 ## Disclaimer
 All scans were performed on my own authorized lab machine for educational purposes.
+
+## Project Screenshots
+
+### Vulnerability Scan Results
+- VULN 1.PNG
+- VULN 2.PNG
+- VULN 3.PNG
+- VULN 5.PNG
+- VULN 6.PNG
+- VULN 7.PNG
+
+### Aggressive Scan Results
+- AGGRESIVE 1.PNG
+- AGGRESIVE 2.PNG
+- AGGRESIVE 3.PNG
+- AGGRESIVE 4.PNG
