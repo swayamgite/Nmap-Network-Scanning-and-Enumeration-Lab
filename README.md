@@ -65,7 +65,7 @@ All scans were performed on my own authorized lab machine for educational purpos
 ## Project Screenshots
 
 ### 1. Host Discovery Scan
-![Host Discovery](HOST-DISCOVERY.png)
+![Host Discovery](host%20discovery.png)
 
 ### 2. Port Scanning
 ![Port Scan](PORT-SCAN.png)
@@ -74,7 +74,7 @@ All scans were performed on my own authorized lab machine for educational purpos
 ![Service Detection](SERVICE-SCAN.png)
 
 ### 4. OS Detection
-![OS Detection](OS-DETECTION.png)
+![OS Detection](os%20detection.png)
 
 ### 5. Vulnerability Scan
 ![Vulnerability Scan](VULN%201.PNG)
