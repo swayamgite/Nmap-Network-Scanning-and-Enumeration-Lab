@@ -64,20 +64,26 @@ All scans were performed on my own authorized lab machine for educational purpos
   
 ## Project Screenshots
 
-### 1. Host Discovery Scan
-![Host Discovery](host%20discovery.png)
+1. Host Discovery Scan
 
-### 2. Port Scanning
-![Port Scan](PORT-SCAN.png)
+"Host Discovery" (host%20discovery.png)
 
-### 3. Service Version Detection
-![Service Detection](SERVICE-SCAN.png)
+2. Port Scanning
 
-### 4. OS Detection
-![OS Detection](os%20detection.png)
+"Port Scan" (PORT-SCAN.png)
 
-### 5. Vulnerability Scan
-![Vulnerability Scan](VULN%201.PNG)
+3. Service Version Detection
 
-### 6. Aggressive Scan
-![Aggressive Scan](AGGRESIVE%201.PNG)
+"Service Detection" (SERVICE-SCAN.png)
+
+4. OS Detection
+
+"OS Detection" (os%20detection.png)
+
+5. Vulnerability Scan
+
+"Vulnerability Scan" (VULN%201.PNG)
+
+6. Aggressive Scan
+
+"Aggressive Scan" (AGGRESIVE%201.PNG)
