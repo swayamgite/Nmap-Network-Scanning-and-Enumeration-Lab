@@ -1,109 +1,345 @@
 # Nmap Network Scanning and Enumeration Lab
 
-## Project Overview
-This project demonstrates network scanning and enumeration using Nmap in a controlled cybersecurity lab environment.
+# 1. Introduction
 
-## Objective
-To identify live hosts, open ports, running services, operating system details, and potential vulnerabilities on a Metasploitable 2 virtual machine.
+Nmap (Network Mapper) is an open-source tool used for network discovery, port scanning, service detection, OS detection, and security auditing.
 
-## Tools Used
-- Kali Linux
-- Nmap
-- Metasploitable 2
-- VMware / VirtualBox
+# 2. Objectives
 
-## Target Information
-- Target Machine: Metasploitable 2
-- Target IP: 192.168.72.130
+- To understand Nmap scanning techniques.
+- To discover active hosts.
+- To identify open ports.
+- To detect services and versions.
+- To identify the operating system.
+- To perform vulnerability scanning.
+- To analyze scan results.
 
-## Scanning Techniques
+# 3. Tools and Technologies Used
 
-### 1. Host Discovery
-Identifies whether the target machine is active on the network.
+| Tool | Purpose |
+|---|---|
+| Kali Linux | Scanning machine |
+| Nmap | Network scanning |
+| Metasploitable 2 | Lab target |
+| VMware | Virtual machine environment |
+| Terminal | Execute commands |
 
-### 2. Port Scanning
-Finds open TCP ports on the target machine.
+# 4. Lab Setup and Target Identification
 
-### 3. Service and Version Detection
-Identifies services and their versions running on open ports.
+Target IP Address: `192.168.72.130`
 
-### 4. OS Detection
-Attempts to identify the target operating system.
+Command:
 
-### 5. Vulnerability Scanning
-Uses Nmap scripts to check for potential vulnerabilities.
+`ip addr`
 
-### 6. Aggressive Scanning
-Collects additional information about services, OS, and network configuration.
+![Lab Setup Connection](host%20discovery%20conn.PNG)
 
-## Results and Analysis
-Scan results help identify open ports, running services, and potential security risks in the lab environment.
+# 5. Host Discovery Scan
 
-## Conclusion
-This project provided practical experience with Nmap scanning techniques and basic network security assessment.
+Command:
 
-## Disclaimer
-All scans were performed on my own authorized lab machine for educational purposes.
+`nmap -sn 192.168.72.130`
 
-## Project Screenshots
+Purpose: To check whether the target host is active.
 
-### Vulnerability Scan Results
-- VULN 1.PNG
-- VULN 2.PNG
-- VULN 3.PNG
-- VULN 5.PNG
-- VULN 6.PNG
-- VULN 7.PNG
+![Host Discovery](host%20discovery.PNG)
 
-### Aggressive Scan Results
-- AGGRESIVE 1.PNG
-- AGGRESIVE 2.PNG
-- AGGRESIVE 3.PNG
-- AGGRESIVE 4.PNG
+![Host Discovery Connection](host%20discovery%20conn.PNG)
 
+# 6. Port Scanning
 
-Project Screenshots
+Command:
 
-1. Host Discovery Scan
+`nmap -p- 192.168.72.130`
 
-"Host Discovery" (host%20discovery.PNG)
+Purpose: To scan all TCP ports and identify open ports.
 
-2. Port Scanning
+| Port | Common Service |
+|---|---|
+| 21 | FTP |
+| 22 | SSH |
+| 23 | Telnet |
+| 25 | SMTP |
+| 80 | HTTP |
+| 445 | SMB |
+| 3306 | MySQL |
 
-"Port Scanning" (port%20scanning.PNG)
+These are common examples; actual results may differ.
 
-3. Service and Version Detection
+![Port Scanning](port%20scanning.PNG)
 
-"Service and Version Detection" (service%20and%20version.PNG)
+![Port Scanning Connection](port%20scan%20conn.PNG)
 
-4. OS Detection
+# 7. Service and Version Detection
 
-"OS Detection" (os%20detection.PNG)
+Command:
 
-5. Vulnerability Scan
+`nmap -sV 192.168.72.130`
 
-"Vulnerability Scan 1" (VULN%201.PNG)
+Purpose: To identify running services and their versions.
 
-"Vulnerability Scan 2" (VULN%202.PNG)
+| Option | Meaning |
+|---|---|
+| `-sV` | Service and version detection |
 
-"Vulnerability Scan 3" (VULN%203.PNG)
+![Service Detection](service%20and%20version.PNG)
 
-"Vulnerability Scan 4" (VULN4.PNG)
+![Service Detection Connection](service%20scan%20conn.PNG)
 
-"Vulnerability Scan 5" (VULN%205.PNG)
+# 8. Operating System Detection
 
-"Vulnerability Scan 6" (VULN%206.PNG)
+Command:
 
-"Vulnerability Scan 7" (VULN%207.PNG)
+`nmap -O 192.168.72.130`
 
-"Vulnerability Scan 8" (VULN%208.PNG)
+Purpose: To estimate the target operating system.
 
-6. Aggressive Scan
+![OS Detection](os%20detection.PNG)
 
-"Aggressive Scan 1" (AGGRESIVE%201.PNG)
+![OS Detection Connection](os%20detection%20conn.PNG)
 
-"Aggressive Scan 2" (AGGRESIVE%202.PNG)
+# 9. Vulnerability Scanning Using NSE
 
-"Aggressive Scan 3" (AGGRESIVE%203.PNG)
+Command:
 
-"Aggressive Scan 4" (AGGRESIVE%204.PNG)
+`nmap --script vuln 192.168.72.130`
+
+Purpose: To check for potential security vulnerabilities.
+
+![Vulnerability Scan 1](VULN%201.PNG)
+
+![Vulnerability Scan 2](VULN%202.PNG)
+
+![Vulnerability Scan 3](VULN%203.PNG)
+
+![Vulnerability Scan 4](VULN4.PNG)
+
+![Vulnerability Scan 5](VULN%205.PNG)
+
+![Vulnerability Scan 6](VULN%206.PNG)
+
+![Vulnerability Scan 7](VULN%207.PNG)
+
+![Vulnerability Scan 8](VULN%208.PNG)
+
+![Vulnerability Scan Connection](volun%20conn.PNG)
+
+# 10. Aggressive Scanning
+
+Command:
+
+`nmap -A 192.168.72.130`
+
+Purpose: To collect detailed information about ports, services, versions, and the operating system.
+
+![Aggressive Scan 1](AGGRESIVE%201.PNG)
+
+![Aggressive Scan 2](AGGRESIVE%202.PNG)
+
+![Aggressive Scan 3](AGGRESIVE%203.PNG)
+
+![Aggressive Scan 4](AGGRESIVE%204.PNG)
+
+![Aggressive Scan Connection](AGGRESIVE%20conn.PNG)
+
+# 11. Scan Summary and Analysis
+
+| Scan Type | Command | Purpose |
+|---|---|---|
+| Host Discovery | `nmap -sn 192.168.72.130` | Check host availability |
+| Port Scanning | `nmap -p- 192.168.72.130` | Find open TCP ports |
+| Service Detection | `nmap -sV 192.168.72.130` | Detect services and versions |
+| OS Detection | `nmap -O 192.168.72.130` | Estimate operating system |
+| Vulnerability Scan | `nmap --script vuln 192.168.72.130` | Check potential vulnerabilities |
+| Aggressive Scan | `nmap -A 192.168.72.130` | Gather detailed information |
+
+# 12. Results and Findings
+
+- Host discovery checks whether the target is reachable.
+- Port scanning identifies accessible ports.
+- Service detection attempts to identify running software.
+- OS detection estimates the target operating system.
+- NSE scripts check for potential vulnerabilities.
+- Aggressive scanning gathers additional target information.
+
+Actual findings should be based on the terminal outputs.
+
+# 13. Conclusion
+
+This project provided practical experience with Nmap network scanning and enumeration using Kali Linux and Metasploitable 2 in an authorized lab environment.
+
+# 14. Disclaimer
+
+This project is for educational purposes only. Scanning should be performed only on systems owned by the user or with explicit authorization.# Nmap Network Scanning and Enumeration Lab
+
+# 1. Introduction
+
+Nmap (Network Mapper) is an open-source tool used for network discovery, port scanning, service detection, OS detection, and security auditing.
+
+# 2. Objectives
+
+- To understand Nmap scanning techniques.
+- To discover active hosts.
+- To identify open ports.
+- To detect services and versions.
+- To identify the operating system.
+- To perform vulnerability scanning.
+- To analyze scan results.
+
+# 3. Tools and Technologies Used
+
+| Tool | Purpose |
+|---|---|
+| Kali Linux | Scanning machine |
+| Nmap | Network scanning |
+| Metasploitable 2 | Lab target |
+| VMware | Virtual machine environment |
+| Terminal | Execute commands |
+
+# 4. Lab Setup and Target Identification
+
+Target IP Address: `192.168.72.130`
+
+Command:
+
+`ip addr`
+
+![Lab Setup Connection](host%20discovery%20conn.PNG)
+
+# 5. Host Discovery Scan
+
+Command:
+
+`nmap -sn 192.168.72.130`
+
+Purpose: To check whether the target host is active.
+
+![Host Discovery](host%20discovery.PNG)
+
+![Host Discovery Connection](host%20discovery%20conn.PNG)
+
+# 6. Port Scanning
+
+Command:
+
+`nmap -p- 192.168.72.130`
+
+Purpose: To scan all TCP ports and identify open ports.
+
+| Port | Common Service |
+|---|---|
+| 21 | FTP |
+| 22 | SSH |
+| 23 | Telnet |
+| 25 | SMTP |
+| 80 | HTTP |
+| 445 | SMB |
+| 3306 | MySQL |
+
+These are common examples; actual results may differ.
+
+![Port Scanning](port%20scanning.PNG)
+
+![Port Scanning Connection](port%20scan%20conn.PNG)
+
+# 7. Service and Version Detection
+
+Command:
+
+`nmap -sV 192.168.72.130`
+
+Purpose: To identify running services and their versions.
+
+| Option | Meaning |
+|---|---|
+| `-sV` | Service and version detection |
+
+![Service Detection](service%20and%20version.PNG)
+
+![Service Detection Connection](service%20scan%20conn.PNG)
+
+# 8. Operating System Detection
+
+Command:
+
+`nmap -O 192.168.72.130`
+
+Purpose: To estimate the target operating system.
+
+![OS Detection](os%20detection.PNG)
+
+![OS Detection Connection](os%20detection%20conn.PNG)
+
+# 9. Vulnerability Scanning Using NSE
+
+Command:
+
+`nmap --script vuln 192.168.72.130`
+
+Purpose: To check for potential security vulnerabilities.
+
+![Vulnerability Scan 1](VULN%201.PNG)
+
+![Vulnerability Scan 2](VULN%202.PNG)
+
+![Vulnerability Scan 3](VULN%203.PNG)
+
+![Vulnerability Scan 4](VULN4.PNG)
+
+![Vulnerability Scan 5](VULN%205.PNG)
+
+![Vulnerability Scan 6](VULN%206.PNG)
+
+![Vulnerability Scan 7](VULN%207.PNG)
+
+![Vulnerability Scan 8](VULN%208.PNG)
+
+![Vulnerability Scan Connection](volun%20conn.PNG)
+
+# 10. Aggressive Scanning
+
+Command:
+
+`nmap -A 192.168.72.130`
+
+Purpose: To collect detailed information about ports, services, versions, and the operating system.
+
+![Aggressive Scan 1](AGGRESIVE%201.PNG)
+
+![Aggressive Scan 2](AGGRESIVE%202.PNG)
+
+![Aggressive Scan 3](AGGRESIVE%203.PNG)
+
+![Aggressive Scan 4](AGGRESIVE%204.PNG)
+
+![Aggressive Scan Connection](AGGRESIVE%20conn.PNG)
+
+# 11. Scan Summary and Analysis
+
+| Scan Type | Command | Purpose |
+|---|---|---|
+| Host Discovery | `nmap -sn 192.168.72.130` | Check host availability |
+| Port Scanning | `nmap -p- 192.168.72.130` | Find open TCP ports |
+| Service Detection | `nmap -sV 192.168.72.130` | Detect services and versions |
+| OS Detection | `nmap -O 192.168.72.130` | Estimate operating system |
+| Vulnerability Scan | `nmap --script vuln 192.168.72.130` | Check potential vulnerabilities |
+| Aggressive Scan | `nmap -A 192.168.72.130` | Gather detailed information |
+
+# 12. Results and Findings
+
+- Host discovery checks whether the target is reachable.
+- Port scanning identifies accessible ports.
+- Service detection attempts to identify running software.
+- OS detection estimates the target operating system.
+- NSE scripts check for potential vulnerabilities.
+- Aggressive scanning gathers additional target information.
+
+Actual findings should be based on the terminal outputs.
+
+# 13. Conclusion
+
+This project provided practical experience with Nmap network scanning and enumeration using Kali Linux and Metasploitable 2 in an authorized lab environment.
+
+# 14. Disclaimer
+
+This project is for educational purposes only. Scanning should be performed only on systems owned by the user or with explicit authorization.
